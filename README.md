@@ -15,34 +15,34 @@ MZM 및 IV 커브 데이터를 분석하고 시각화하는 통합 GUI 애플리
 
 2. 자동화된 광학 분석 (Optical Analysis):
 
-        Reference Spectrum (6차 다항식) 피팅 및 보정 처리
+     Reference Spectrum (6차 다항식) 피팅 및 보정 처리
 
-        MZI 모델 기반 커브 피팅(Curve Fitting) 및 타겟 파장(1550nm) 정규화
+     MZI 모델 기반 커브 피팅(Curve Fitting) 및 타겟 파장(1550nm) 정규화
 
 3. 전기적 특성 분석 (Electrical Analysis):
 
-        -1.0V 및 1.0V 기준 특정 전압에서의 전류(I) 값 자동 추출
+    -1.0V 및 1.0V 기준 특정 전압에서의 전류(I) 값 자동 추출
 
-        다이오드 방정식(Diode Model) 및 다항식을 활용한 Advanced IV Fitting
+   다이오드 방정식(Diode Model) 및 다항식을 활용한 Advanced IV Fitting
 
-        리포트 자동 생성: 추출된 주요 파라미터(Rsq, Max trans 등)를 취합하여 날짜별 디렉토리에 Excel(.xlsx) 포맷으로 자동 저장 (file_manager 모듈)
+   리포트 자동 생성: 추출된 주요 파라미터(Rsq, Max trans 등)를 취합하여 날짜별 디렉토리에 Excel(.xlsx) 포맷으로 자동 저장 (file_manager 모듈)
 
 # 🛠️ 개발 및 문제 해결 전략 (Development Approach)
 본 프로젝트는 도메인 지식과 최신 AI 도구를 결합한 'AI 페어 프로그래밍(Pair Programming)' 방식으로 개발되어 생산성과 코드 품질을 극대화했습니다.
 
-  1. 나의 핵심 역할 (Domain Logic & Architecture):
+1. 나의 핵심 역할 (Domain Logic & Architecture):
 
-         수학적 모델링 설계: 광소자 특성에 맞는 mzi_model 방정식과 diode_model 수식을 직접 정의하고 초기 파라미터(Initial Guess) 설정.
+   수학적 모델링 설계: 광소자 특성에 맞는 mzi_model 방정식과 diode_model 수식을 직접 정의하고 초기 파라미터(Initial Guess) 설정.
 
-         데이터 파이프라인 기획: 복잡한 XML 구조에서 필요한 태그(WavelengthSweep, IVMeasurement)를 식별하고, 최종 엑셀 리포트로 출력되기까지의 데이터 흐름 설계.
+   데이터 파이프라인 기획: 복잡한 XML 구조에서 필요한 태그(WavelengthSweep, IVMeasurement)를 식별하고, 최종 엑셀 리포트로 출력되기까지의 데이터 흐름 설계.
 
-         트러블슈팅 및 검증: 다중 파일 병합 시 발생하는 예외 처리를 디버깅하고, 피팅된 그래프가 물리적 의미(Reference 일치 여부 등)에 부합하는지 교차 검증.
+   트러블슈팅 및 검증: 다중 파일 병합 시 발생하는 예외 처리를 디버깅하고, 피팅된 그래프가 물리적 의미(Reference 일치 여부 등)에 부합하는지 교차 검증.
 
 2. AI 도구 활용 (Efficiency & Implementation):
 
-       Tkinter 기반의 복잡한 UI 레이아웃 및 Matplotlib 시각화 뼈대 등 반복적인 보일러플레이트(Boilerplate) 코드를 AI를 통해 신속하게 구현.
+   Tkinter 기반의 복잡한 UI 레이아웃 및 Matplotlib 시각화 뼈대 등 반복적인 보일러플레이트(Boilerplate) 코드를 AI를 통해 신속하게 구현.
 
-       유지보수성을 높이기 위해 하나의 스크립트였던 코드를 app.py, models.py, file_manager.py 등 객체지향적 모듈로 분리(Refactoring)하는 과정에서 AI의 설계 제안을 수용 및 적용.
+   유지보수성을 높이기 위해 하나의 스크립트였던 코드를 app.py, models.py, file_manager.py 등 객체지향적 모듈로 분리(Refactoring)하는 과정에서 AI의 설계 제안을 수용 및 적용.
 
 # 💻 기술 스택 (Tech Stack)
 Language: Python 3.x

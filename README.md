@@ -1,6 +1,8 @@
 # XML Analyzer - Advanced Analysis
 
 MZM 및 IV 커브 데이터를 분석하고 시각화하는 통합 GUI 애플리케이션입니다.
+<img width="1045" height="736" alt="image" src="https://github.com/user-attachments/assets/0243242c-ec55-4afc-a7dd-82c6a0b21377" />
+
 
 ## 실행 방법
 1. 필요 라이브러리 설치: `pip install -r requirements.txt`
